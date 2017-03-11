@@ -5,7 +5,7 @@ getseq() {
 	n=$1
 	acn=${n##*_}
 	echo $1 > data/dbseqs/${acn}.fasta
-	curl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=${acn}&rettype=fasta" >> data/dbseqs/${acn}.fasta
+	curl "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=${acn}&amp;rettype=fasta" >> data/dbseqs/${acn}.fasta
 }
 export -f getseq
 rm -rf data/dbseqs; mkdir data/dbseqs
